@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELAMAT ULANG TAHUN KE-18, DILA APRILIA!</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Handlee&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS untuk styling dan animasi */
+        body {
+            font-family: 'Handlee', cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #4a4a4a;
+            overflow: hidden; 
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            margin: 20px;
+            position: relative;
+            z-index: 10; 
+            border: 6px solid #ff69b4;
+            transform: scale(0.98);
+            transition: transform 0.5s ease;
+        }
+        .container:hover {
+            transform: scale(1.0);
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #e91e63;
+            font-size: 3.8em;
+            margin-bottom: 5px;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #ff1493;
+            font-size: 1.8em;
+            margin-top: 5px;
+        }
+
+        p {
+            color: #d81b60;
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            font-size: 1.1em;
+            color: #888;
+            margin-top: -10px;
+        }
+
+        /* Hitungan Mundur Style */
+        #countdown {
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+            color: #4CAF50;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0fff0;
+            border-radius: 10px;
+            border: 2px dashed #ff69b4;
+            display: inline-block;
+        }
+
+        .message-box {
+            background-color: #ffe0e9; 
+            border-left: 5px solid #ff69b4;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            display: none; 
+            font-style: italic;
+            color: #c2185b;
+            font-size: 1.5em;
+            box-shadow: inset 0 0 10px rgba(255,105,180,0.4);
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.3em;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-family: 'Pacifico', cursive;
+        }
+        button:hover {
+            background-color: #ff1493;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Balon dan Animasi (tetap sama) */
+        .balloon {
+            position: absolute; bottom: -100px; width: 60px; height: 80px; background-color: #ffb6c1; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            opacity: 0.8; animation: float 10s ease-in-out infinite; z-index: 1; box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+        }
+        .balloon:nth-child(2n) { background-color: #ff69b4; animation-duration: 12s; animation-delay: 1s; left: 10%; width: 70px; height: 90px;}
+        .balloon:nth-child(3n) { background-color: #ffa07a; animation-duration: 9s; animation-delay: 2s; left: 20%; width: 50px; height: 70px;}
+        .balloon:nth-child(4n) { background-color: #ffc0cb; animation-duration: 11s; animation-delay: 0.5s; left: 30%; width: 65px; height: 85px;}
+        .balloon:nth-child(5n) { background-color: #f7cac9; animation-duration: 13s; animation-delay: 3s; left: 40%; width: 55px; height: 75px;}
+        .balloon:nth-child(6n) { background-color: #ffb6c1; animation-duration: 10s; animation-delay: 1.5s; left: 50%; width: 75px; height: 95px;}
+        .balloon:nth-child(7n) { background-color: #ff69b4; animation-duration: 8s; animation-delay: 2.5s; left: 60%; width: 60px; height: 80px;}
+        .balloon:nth-child(8n) { background-color: #ffa07a; animation-duration: 14s; animation-delay: 0s; left: 70%; width: 68px; height: 88px;}
+        .balloon:nth-child(9n) { background-color: #ffc0cb; animation-duration: 11s; animation-delay: 1.8s; left: 80%; width: 52px; height: 72px;}
+        .balloon:nth-child(10n) { background-color: #f7cac9; animation-duration: 9s; animation-delay: 3.5s; left: 90%; width: 63px; height: 83px;}
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(-1000px) rotate(360deg); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="balloon" style="left: 5%;"></div>
+    <div class="balloon" style="left: 15%;"></div>
+    <div class="balloon" style="left: 25%;"></div>
+    <div class="balloon" style="left: 35%;"></div>
+    <div class="balloon" style="left: 45%;"></div>
+    <div class="balloon" style="left: 55%;"></div>
+    <div class="balloon" style="left: 65%;"></div>
+    <div class="balloon" style="left: 75%;"></div>
+    <div class="balloon" style="left: 85%;"></div>
+    <div class="balloon" style="left: 95%;"></div>
+
+    <div class="container">
+        <h1>🥳 Happy Birthday, Dila! 🎂</h1>
+        <h2>Selamat Ulang Tahun ke-18</h2>
+        <p class="details">Lahir pada **16 April 2008**</p>
+
+        <p>Di usiamu yang ke-18 ini, semoga kamu semakin dewasa, sehat selalu, dan semua impianmu tercapai. Selamat menikmati babak baru kehidupan!</p>
+        
+        <h3>Menuju Ulang Tahun ke-19 (16 April 2026):</h3>
+        <div id="countdown"></div>
+        
+        <button id="secretMessageBtn" onclick="togglePesanRahasia()">Buka Pesan Spesial!</button>
+        
+        <div id="pesanTambahan" class="message-box">
+            <p>Untuk Dila Aprilia yang paling spesial: Kamu berhak mendapatkan semua kebahagiaan di dunia. Jadilah dirimu sendiri, kejar semua yang kamu yakini, dan jangan pernah berhenti bersinar. Kami mencintaimu! ❤️</p>
+        </div>
+
+    </div>
+
+    <script>
+        // === JavaScript untuk Hitungan Mundur (Countdown Timer) ===
+        // Set tanggal tujuan (16 April 2026)
+        var countDownDate = new Date("Apr 16, 2026 00:00:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Tampilkan hasil
+            document.getElementById("countdown").innerHTML = days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+
+            // Jika hitungan mundur selesai
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "🎉 DILA ULANG TAHUN LAGI HARI INI! 🎉";
+            }
+        }, 1000);
+        
+        // === JavaScript untuk Pesan Rahasia ===
+        function togglePesanRahasia() {
+            var pesan = document.getElementById("pesanTambahan");
+            var button = document.getElementById("secretMessageBtn");
+
+            if (pesan.style.display === "none" || pesan.style.display === "") {
+                pesan.style.display = "block";
+                button.textContent = "Sembunyikan Pesan";
+            } else {
+                pesan.style.display = "none";
+                button.textContent = "Buka Pesan Spesial!";
+            }
+        }
+    </script>
+
+</body>
+</html>
