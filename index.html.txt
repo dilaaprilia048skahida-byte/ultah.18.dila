@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun yang Paling Pink!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Handlee&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS untuk styling dan animasi */
+        body {
+            font-family: 'Handlee', cursive; /* Font lucu default */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); /* Pink Gradient */
+            background-size: 400% 400%; /* Ukuran latar belakang untuk animasi */
+            animation: gradientAnimation 15s ease infinite; /* Animasi gradient */
+            color: #4a4a4a; /* Warna teks default */
+            overflow: hidden; /* Sembunyikan overflow untuk animasi balon */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Sedikit transparan */
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 20px;
+            position: relative;
+            z-index: 10; /* Pastikan di atas balon */
+            border: 5px solid #ff69b4; /* Border pink cerah */
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive; /* Font lucu untuk judul */
+            color: #e91e63; /* Pink cerah */
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        p {
+            color: #d81b60; /* Pink lebih gelap untuk paragraf */
+            font-size: 1.4em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .message-box {
+            background-color: #ffe0e9; /* Latar belakang pink lembut untuk pesan tambahan */
+            border-left: 5px solid #ff69b4;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            display: none; /* Awalnya tersembunyi */
+            font-style: italic;
+            color: #c2185b;
+            font-size: 1.3em;
+            box-shadow: inset 0 0 10px rgba(255,105,180,0.2);
+        }
+
+        button {
+            background-color: #ff69b4; /* Pink hot */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.3em;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-family: 'Pacifico', cursive;
+        }
+        button:hover {
+            background-color: #ff1493; /* Pink lebih gelap saat hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Styling untuk balon animasi */
+        .balloon {
+            position: absolute;
+            bottom: -100px; /* Mulai dari bawah layar */
+            width: 60px;
+            height: 80px;
+            background-color: #ffb6c1; /* Pink muda */
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            opacity: 0.8;
+            animation: float 10s ease-in-out infinite;
+            z-index: 1; /* Di belakang container utama */
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+        }
+
+        .balloon:nth-child(2n) {
+            background-color: #ff69b4; /* Hot pink */
+            animation-duration: 12s;
+            animation-delay: 1s;
+            left: 10%;
+            width: 70px;
+            height: 90px;
+        }
+
+        .balloon:nth-child(3n) {
+            background-color: #ffa07a; /* Light salmon (pinkish orange) */
+            animation-duration: 9s;
+            animation-delay: 2s;
+            left: 20%;
+            width: 50px;
+            height: 70px;
+        }
+
+        .balloon:nth-child(4n) {
+            background-color: #ffc0cb; /* Pink */
+            animation-duration: 11s;
+            animation-delay: 0.5s;
+            left: 30%;
+            width: 65px;
+            height: 85px;
+        }
+        .balloon:nth-child(5n) {
+            background-color: #f7cac9; /* Pastel pink */
+            animation-duration: 13s;
+            animation-delay: 3s;
+            left: 40%;
+            width: 55px;
+            height: 75px;
+        }
+        .balloon:nth-child(6n) {
+            background-color: #ffb6c1;
+            animation-duration: 10s;
+            animation-delay: 1.5s;
+            left: 50%;
+            width: 75px;
+            height: 95px;
+        }
+        .balloon:nth-child(7n) {
+            background-color: #ff69b4;
+            animation-duration: 8s;
+            animation-delay: 2.5s;
+            left: 60%;
+            width: 60px;
+            height: 80px;
+        }
+        .balloon:nth-child(8n) {
+            background-color: #ffa07a;
+            animation-duration: 14s;
+            animation-delay: 0s;
+            left: 70%;
+            width: 68px;
+            height: 88px;
+        }
+        .balloon:nth-child(9n) {
+            background-color: #ffc0cb;
+            animation-duration: 11s;
+            animation-delay: 1.8s;
+            left: 80%;
+            width: 52px;
+            height: 72px;
+        }
+        .balloon:nth-child(10n) {
+            background-color: #f7cac9;
+            animation-duration: 9s;
+            animation-delay: 3.5s;
+            left: 90%;
+            width: 63px;
+            height: 83px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(-1000px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Musik kontrol */
+        .audio-controls {
+            margin-top: 30px;
+            z-index: 10;
+            position: relative;
+        }
+        .audio-controls button {
+            background-color: #ff1493; /* Deep pink */
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 0 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .audio-controls button:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="balloon" style="left: 5%;"></div>
+    <div class="balloon" style="left: 15%;"></div>
+    <div class="balloon" style="left: 25%;"></div>
+    <div class="balloon" style="left: 35%;"></div>
+    <div class="balloon" style="left: 45%;"></div>
+    <div class="balloon" style="left: 55%;"></div>
+    <div class="balloon" style="left: 65%;"></div>
+    <div class="balloon" style="left: 75%;"></div>
+    <div class="balloon" style="left: 85%;"></div>
+    <div class="balloon" style="left: 95%;"></div>
+
+    <div class="container">
+        <h1>🎉 Selamat Ulang Tahun, [Nama Orang yang Ulang Tahun]! 🎉</h1>
+        <p>Semoga hari istimewamu ini dipenuhi dengan kebahagiaan, tawa, dan semua hal terindah yang kamu impikan.</p>
+        <p>Kamu adalah pribadi yang luar biasa, dan kami sangat bersyukur memilikimu dalam hidup kami!</p>
+        
+        <button id="secretMessageBtn" onclick="togglePesanRahasia()">Buka Pesan Spesial!</button>
+        
+        <div id="pesanTambahan" class="message-box">
+            <p>Selamat menikmati setiap momen di hari spesialmu! Semua doa terbaik, impian yang menjadi kenyataan, dan kebahagiaan tak terbatas untukmu. Kami mencintaimu! ❤️</p>
+        </div>
+
+        <div class="audio-controls">
+            <audio id="ulangTahunMusik" loop>
+                <source src="ulangtahun.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+            <button onclick="playMusic()">▶️ Putar Musik</button>
+            <button onclick="pauseMusic()">⏸️ Jeda Musik</button>
+        </div>
+    </div>
+
+    <script>
+        function togglePesanRahasia() {
+            var pesan = document.getElementById("pesanTambahan");
+            var button = document.getElementById("secretMessageBtn");
+
+            if (pesan.style.display === "none" || pesan.style.display === "") {
+                pesan.style.display = "block";
+                button.textContent = "Sembunyikan Pesan";
+            } else {
+                pesan.style.display = "none";
+                button.textContent = "Buka Pesan Spesial!";
+            }
+        }
+
+        // Fungsi untuk mengontrol musik
+        var myAudio = document.getElementById("ulangTahunMusik");
+
+        function playMusic() {
+            myAudio.play();
+        }
+
+        function pauseMusic() {
+            myAudio.pause();
+        }
+
+        // Opsional: Coba putar musik secara otomatis saat halaman dimuat
+        // Beberapa browser mungkin memblokir ini sampai ada interaksi pengguna
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // myAudio.play().catch(error => {
+            //     console.log("Autoplay dicegah. Pengguna perlu berinteraksi untuk memutar musik.");
+            // });
+        });
+    </script>
+
+</body>
+</html>
+
